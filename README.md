@@ -12,12 +12,13 @@ Recovery of open source dvb receivers using the linux operating system and the E
 - [dvb-receiver-recovery](#dvb-receiver-recovery)
     - [INITIAL SITUATION](#initial-situation)
     - [SUSPECTED CAUSE OF ERROR](#suspected-cause-of-error)
-    - [FLASHING IMAGE BY USB PREFERED](#flashing-image-by-usb-prefered)
+    - [FLASHING IMAGE BY USB DEVICE PREFERED](#flashing-image-by-usb-device-prefered)
     - [ENABLE FORCE MODE](#enable-force-mode)
     - [ACCESS BOOTLOADER MODE BY RS232](#access-bootloader-mode-by-rs232)
     - [PUTTY RS232 CONNECTION](#putty-rs232-connection)
     - [USE OF BCM / BOLT](#use-of-bcm--bolt)
         - [INTERRUPT THE BOOT PROCESS](#interrupt-the-boot-process)
+        - [KERNEL IMAGE](#kernel-image)
         - [ANALYZING EXISTING DEVICES](#analyzing-existing-devices)
         - [INSTALL NEW KERNEL](#install-new-kernel)
     - [LICENSE](#license)
@@ -104,22 +105,29 @@ control + C
 ```
 on the keyboard of our pc, and the log will stop remaining as the image shows
 
+### KERNEL IMAGE
+The kernel image is contained in every .img file of a PVR distribution. To extract it, simply using a ZIP program (7Zip, PeaZip, etc.) is not sufficient. The image should be extracted to a USB device with e.g. ImageBurn (https://www.imgburn.com/index.php?act=download).
+
 ### ANALYZING EXISTING DEVICES
 Once the receiver is in bootloader mode, it allows us to execute commands in it, we can use help to see what commands we can use, this time we are going to do the example to introduce kernel in our receiver in case it has caused a blockage, To do this, the first thing is to know the partitions for this we execute:
 ```
 show devices
 ```
-
 As we can see, the memory area for the introduction of the kernel is __emmcflash0.kernel__, since then we insert the kernel of our receiver on a pendrive, for example at the root of it:
+
+<img src="images/putty-show-devices.png" alt="Show devices" width="100%"/>
 
 Later we introduce the pendrive in the usb of the receiver and we will observe in the log that it is recognized
 
 ### INSTALL NEW KERNEL
-Now to install the kernel we will use the following command:
+install the kernel we will use the following command:
 ```
-flash usbdisk0: kernel_auto.bin emmcflash0.kernel
+flash usbdisk0:kernel.bin emmcflash0.kernel
 ```
+
 And after pressing enter we will see that it has been installed correctly
+
+<img src="images/putty-flash-command-successful.png" alt="Flash command successful" width="100%"/>
 
 Now we could remove the rs232 connection and execute reboot in the terminal and the deco would start normally with the kernel that we have installed.
 
