@@ -12,7 +12,8 @@ Recovery of open source dvb receivers using the linux operating system and the E
 - [dvb-receiver-recovery](#dvb-receiver-recovery)
     - [INITIAL SITUATION](#initial-situation)
     - [SUSPECTED CAUSE OF ERROR](#suspected-cause-of-error)
-    - [FLASHING IMAGE PREFERED](#flashing-image-prefered)
+    - [FLASHING IMAGE BY USB PREFERED](#flashing-image-by-usb-prefered)
+    - [ENABLE FORCE MODE](#enable-force-mode)
     - [ACCESS BOOTLOADER MODE BY RS232](#access-bootloader-mode-by-rs232)
     - [PUTTY RS232 CONNECTION](#putty-rs232-connection)
     - [USE OF BCM / BOLT](#use-of-bcm--bolt)
@@ -32,19 +33,27 @@ After an unsuccessful update of OpenPLI from Version 7 to 8.1 stable release on 
 Since flashing the new OpenPLI image with a USB stick was not possible, I used the menu item "Update to latest release and reboot". Cause I read it in here: https://wiki.openpli.org/Releases
 * Major releases (like 7 => 8) you must flash, preferably using the menu and choosing the backup option, then everything is restored after the flash. When there is no Hard disk present use an USB stick.
 
-## FLASHING IMAGE (PREFERED)
+## FLASHING IMAGE BY USB DEVICE (PREFERED)
 
-1. Format a USB stick to FAT32.
-2. Download the image of your choice (https://openpli.org/download) and extract it to your desktop.
-3. Open the folder you extracted to your desktop, see another folder named "zgemma," this has to be copied to USB stick.
-4. Power off the receiver
-5. Ensure no other USB devices are plugged into the receiver
-6. Insert the USB stick containing the image
-7. Power the receiver on.
-8. Immediately after powering on PRESS AND HOLD the front power button
-9. Display appears FLSH on front display, release the power button
-10. If successful the receiver will reboot it self after the flashing process has completed.
-11. Remove USB stick that contains the images files. 
+* Prepare USB stick
+  * Low level format your usb stick with e.g. SD Card Formater (https://www.sdcard.org/downloads/formatter/)
+  * Format a USB stick to FAT32
+* Download
+  * Download the image of your choice (https://openpli.org/download) and extract it to your desktop. Do not extract it directly to your usb device.
+  * Open the folder you extracted to your desktop, see another folder named "zgemma," this has to be copied to USB stick.
+* Power off the receiver
+* Ensure no other USB devices are plugged into the receiver
+* Insert USB device
+  * Insert the USB device containing the image
+  * Best practices: For usb devices <= 8 GB use the USB2.0 connectors, < 8GB the USB3.0 connector
+* Power the receiver on on backside switch
+* Immediately after powering on PRESS AND HOLD the front power button
+* Display appears FLSH on front display, release the power button
+* If successful the receiver will reboot it self after the flashing process has completed.
+* Remove USB stick that contains the images files.
+
+## ENABLE FORCE MODE
+If “noforce” file is present in the h7 subfolder please make sure to rename it to “force” without any 
 
 ## ACCESS BOOTLOADER MODE BY RS232
 
