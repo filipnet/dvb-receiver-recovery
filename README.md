@@ -54,21 +54,20 @@ Since flashing the new OpenPLI image with a USB stick was not possible, I used t
 * Remove USB stick that contains the images files.
 
 ## ENABLE FORCE MODE
-If “noforce” file is present in the h7 subfolder please make sure to rename it to “force” without any 
+If no additional or “noforce” file is present in the h7 subfolder, please make sure to create or rename it to “force” without any file extensions.
 
 ## ACCESS BOOTLOADER MODE BY RS232
-
-This time we bring you how to access the bootloader mode of receiver using a terminal, in this example putty through the rs232 connection.
+Access the bootloader mode of receiver using a terminal, in this example putty through the rs232 connection.
 
 In this way, once we have accessed our receiver in bootloader mode, we can:
-* View the boot log of our receiver
+* View the boot log of the receiver.
 * Execute commands from the terminal, such as for example to insert files into the flash partitions of our receiver.
 
 For this we will need:
-* The putty program for our pc, you can download it from the official link
-* a 6-pin RJ adapter —db9female (rs232), with the following connections:
+* The putty program for our pc, you can download it from the official link here (https://www.putty.org)
+* a 6-pin RJ adapter db9female (RJ232), with the following connections:
 
-https://www.az-delivery.de/en/products/ftdi-adapter-ft232rl
+https://www.az-delivery.de/en/products/ftdi-adapter-ft232rl (buy it at the reseller of your trust)
 
 <img src="images/ftdi-adapter-ft232rl-pinout.png" alt="FTDI Adapter FT232RL Pinout" width="300"/>
 
@@ -81,7 +80,7 @@ ZGemma RS232                                     FTDI Adapter
 ```
 * Note: RX and TX must be cross wired
 
-Now with the receiver turned off, we connect the receiver to the pc through the ir sensor input of our receiver
+Now with the receiver turned off, we connect the receiver to the pc through the connection port of our receiver. 
 
 ## PUTTY RS232 CONNECTION
 Then open putty on our pc and configure as follows:
@@ -99,7 +98,7 @@ In this way, if the log appears, we already know that we made the rs232 connecti
 
 ## USE OF BCM / BOLT
 ### INTERRUPT THE BOOT PROCESS
-Now we are going to see how to put the receiver in bootloader mode, for this we repeat the previous steps but when we start to see the log we press 
+Now we are going to see how to put the receiver in bootloader mode, for this we repeat the previous steps but when we start to see the log press 
 ```
 control + C
 ```
