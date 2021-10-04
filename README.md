@@ -41,6 +41,7 @@ Since flashing the new OpenPLI image with a USB stick was not possible, I used t
 * Download
   * Download the image of your choice (https://openpli.org/download) and extract it to your desktop. Do not extract it directly to your usb device.
   * Open the folder you extracted to your desktop, see another folder named "zgemma," this has to be copied to USB stick.
+  * The USB stick should always be disconnected using the Windows function "Safely Remove Hardware" before physically removing it.
 * Power off the receiver
 * Ensure no other USB devices are plugged into the receiver
 * Insert USB device
