@@ -80,6 +80,8 @@ Then open putty on our pc and configure as follows:
 * Serial Line: COM1
 * Speed: 115200 (bits per second)
 
+<img src="images/serial-putty-configuration.png" alt="Putty serial configuration" width="450"/>
+
 Taking into account replace COM1 with the rs232 port used by your pc, and then click on open, and then turn on the receiver of the current and if everything went well we will observe the startup log and processes of the receiver.
 
 Among other things we can see for example the bootloader version that we have installed
