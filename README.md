@@ -12,6 +12,7 @@ Recovery of open source dvb receivers using the linux operating system and the E
 - [dvb-receiver-recovery](#dvb-receiver-recovery)
     - [INITIAL SITUATION](#initial-situation)
     - [SUSPECTED CAUSE OF ERROR](#suspected-cause-of-error)
+    - [DIFFERENCE OF IMAGES](#difference-of-images)
     - [FLASHING IMAGE BY USB DEVICE PREFERED](#flashing-image-by-usb-device-prefered)
     - [ENABLE FORCE MODE](#enable-force-mode)
     - [ACCESS BOOTLOADER MODE BY RS232](#access-bootloader-mode-by-rs232)
@@ -33,6 +34,15 @@ After an unsuccessful update of OpenPLI from Version 7 to 8.1 stable release on 
 ## SUSPECTED CAUSE OF ERROR
 Since flashing the new OpenPLI image with a USB stick was not possible, I used the menu item "Update to latest release and reboot". Cause I read it in here: https://wiki.openpli.org/Releases
 * Major releases (like 7 => 8) you must flash, preferably using the menu and choosing the backup option, then everything is restored after the flash. When there is no Hard disk present use an USB stick.
+
+## DIFFERENCE OF IMAGES
+Depending on PVR distribution and receiver manufacturer there are different images, here should be used in principle "stable releases".
+
+| Extension  | Description |
+| ------------- | ------------- |
+| {distribution-release-date}_usb.zip | Default image without multiboot options |
+| {distribution-release-date}_multiboot.zip | Many Vendors offer multiboot, this receiver specific feature, when available makes it possible to install multiple images on a receiver. So like 3 or more versions of PLi, how much images you can install when it is supported depends on the slots, let's say the partitions that are present. |
+| {distribution-release-date}_recovery_emmc.zip | With the recovery_emmc.zip also the individual boot areas are repartitioned |
 
 ## FLASHING IMAGE BY USB DEVICE (PREFERED)
 
@@ -129,7 +139,7 @@ And after pressing enter we will see that it has been installed correctly
 
 <img src="images/putty-flash-command-successful.png" alt="Flash command successful" width="100%"/>
 
-Now we could remove the rs232 connection and execute reboot in the terminal and the deco would start normally with the kernel that we have installed.
+Now we could remove the rs232 connection and execute reboot in the terminal and the receiver would start normally with the kernel that we have installed.
 
 ## LICENSE
 dvb-receiver-recovery and all individual scripts are under the BSD 3-Clause license unless explicitly noted otherwise. Please refer to the LICENSE
