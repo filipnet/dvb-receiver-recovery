@@ -15,6 +15,7 @@ Recovery of open source dvb receivers using the linux operating system and the E
     - [DIFFERENCE OF IMAGES](#difference-of-images)
     - [FLASHING IMAGE BY USB DEVICE PREFERED](#flashing-image-by-usb-device-prefered)
     - [ENABLE FORCE MODE](#enable-force-mode)
+    - [A QUICK OVERVIEW OF AN MICROCONTROLLER](#a-quick-overview-of-an-microcontroller)
     - [ACCESS BOOTLOADER MODE BY RS232](#access-bootloader-mode-by-rs232)
     - [PUTTY RS232 CONNECTION](#putty-rs232-connection)
     - [USE OF BCM / BOLT](#use-of-bcm--bolt)
@@ -66,6 +67,16 @@ Depending on PVR distribution and receiver manufacturer there are different imag
 
 ## ENABLE FORCE MODE
 If no additional or “noforce” file is present in the h7 subfolder, please make sure to create or rename it to “force” without any file extensions.
+
+## A QUICK OVERVIEW OF A MICROCONTROLLER 
+| Stage  | Description |
+| ------------- | ------------- |
+| Raw Chip | An integrated circuit or monolithic integrated circuit is a set of electronic circuits on one small flat piece (or "chip") of semiconductor material. |
+| Bootloader | A bootloader is an application whose main goal is to update/modify the system software without the use of special firmware upgrade tools. Bootloaders can have many functions, but are mainly used to manage the application. |
+| BOLT / CTC | A firmware interface and boot loader, It is a flexible toolkit for CPU initialization and bootstrap code for use on embedded processors. It is roughly comparable to the BIOS on the PC platform. In context with dvb-recorders access to this interface can be taken over a RS232 interface. |
+| Flash | Flash memory is an electronic non-volatile computer memory storage medium that can be electrically erased and reprogrammed. | 
+| EEPROM | EEPROM stands for "electrically erasable programmable read-only memory" and is a type of non-volatile memory. |
+| Application Firmware | Firmware is a specific class of computer software that provides low-level control of a device's specific hardware. In this case a dvb distribution such as OpenPLI, OpenATV, among others. |
 
 ## ACCESS BOOTLOADER MODE BY RS232
 Access the bootloader mode of receiver using a terminal, in this example putty through the rs232 connection.
