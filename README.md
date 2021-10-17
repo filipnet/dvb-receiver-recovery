@@ -1,5 +1,6 @@
 # dvb-receiver-recovery
 Recovery of open source dvb receivers using the linux operating system and the Enigma2 application
+<img src="images/zgemma_h7s.jpg" alt="zGemma H7S" width="500" align="right"/>
 
 > **⚠ IMPORTANT, PLEASE READ**  
 > This repository is for troubleshooting documentation only. This is not a forum for placing your own technical problems. Thus the following applies:
@@ -15,7 +16,7 @@ Recovery of open source dvb receivers using the linux operating system and the E
     - [DIFFERENCE OF IMAGES](#difference-of-images)
     - [FLASHING IMAGE BY USB DEVICE PREFERED](#flashing-image-by-usb-device-prefered)
     - [ENABLE FORCE MODE](#enable-force-mode)
-    - [A QUICK OVERVIEW OF AN MICROCONTROLLER](#a-quick-overview-of-an-microcontroller)
+    - [A QUICK OVERVIEW OF A MICROCONTROLLER](#a-quick-overview-of-a-microcontroller)
     - [ACCESS BOOTLOADER MODE BY RS232](#access-bootloader-mode-by-rs232)
     - [PUTTY RS232 CONNECTION](#putty-rs232-connection)
     - [USE OF BCM / BOLT](#use-of-bcm--bolt)
@@ -60,7 +61,13 @@ Depending on PVR distribution and receiver manufacturer there are different imag
   * Insert the USB device containing the image
   * Best practices: For usb devices <= 8 GB use the USB2.0 connectors, < 8GB the USB3.0 connector
 * Power the receiver on on backside switch
+
+<img src="images/zgemma_h7s_powerbutton_back.jpg" alt="zGemma H7S" width="200"/>
+
 * Immediately after powering on PRESS AND HOLD the front power button
+
+<img src="images/zgemma_h7s_powerbutton_front.jpg" alt="zGemma H7S" width="200"/>
+
 * Display appears FLSH on front display, release the power button
 * If successful the receiver will reboot it self after the flashing process has completed.
 * Remove USB stick that contains the images files.
@@ -80,6 +87,8 @@ If no additional or “noforce” file is present in the h7 subfolder, please ma
 
 ## ACCESS BOOTLOADER MODE BY RS232
 Access the bootloader mode of receiver using a terminal, in this example putty through the rs232 connection.
+
+<img src="images/zgemma_h7s_rs232_connector.jpg" alt="zGemma H7S RS232 Connector" width="500"/>
 
 In this way, once we have accessed our receiver in bootloader mode, we can:
 * View the boot log of the receiver.
